@@ -1,9 +1,7 @@
 package org.finbank.config;
 
-import org.springframework.boot.security.autoconfigure.web.servlet.SecurityFilterProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,14 +26,14 @@ public class ProjectConfig {
     @Bean
     UserDetailsService userDetailsService() {
         var user = User.withUsername("finBank")
-                    .password("12345")
-                    .authorities("read")
-                    .build();
+                .password("12345")
+                .authorities("read")
+                .build();
         return new InMemoryUserDetailsManager(user);
     }
 
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
 }
