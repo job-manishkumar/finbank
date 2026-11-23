@@ -6,11 +6,10 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-@Component
+//@Component
 public class CustomerAuthenticationProvider implements AuthenticationProvider {
     @Override
     public @Nullable Authentication authenticate(Authentication authentication) throws AuthenticationException {
